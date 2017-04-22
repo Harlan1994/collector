@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>小胖子</title>
+    <link type="text/css" rel="stylesheet" href="${base}/resource/css/bootstrap/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="${base}/resource/css/common/front.css">
+    <link type="text/css" rel="stylesheet" href="${base}/resource/css/common/reset.css">
+    <script type="text/javascript" href="${base}/resource/js/bootstrap.min.js"></script>
+    <script type="text/javascript" href="${base}/resource/js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="body">
+        <div class="container">
+            <div class="row">
+                <div class="panel col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" id="login-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">用户登录</h3>
+                    </div>
+                    <div class="panel-body row">
+                        <div class="left-part col-sm-6 col-md-6 col-lg-6">
+                            <form class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" id="login-form">
+                                <div class="form-group">
+                                    <label for="account">用户名/邮箱</label>
+                                    <input type="text" class="form-control" id="account" name="account" placeholder="请输入用户名/邮箱">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">密码</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                                    <input type="hidden" id="randomString" value="9090">
+                                </div>
+                                <div class="form-group">
+                                    <label for="check-code">验证码</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="check-code" name="checkCode" placeholder="请输入验证码">
+                                        <span class="input-group-btn">
+                                            <img id="check-code-img" src="${base}/checkCode" onclick="this.src='${base}/checkCode?rnd=' + Math.random();">
+                                        </span>
+                                    </div>
+                                </div>
+                                <a class="btn btn-primary btn-block" id="login-btn">立即登陆</a>
+                                <a id="find-password" href="${base}/findPassword?step=1">忘记密码?</a>
+                            </form>
+                        </div>
+                        <div class="right-part col-sm-6 col-md-6 col-lg-6">
+                            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <p class="text">还没有帐号? 赶紧注册一个吧~</p>
+                                <a class="btn btn-primary btn-block" href="${base}/register">立即注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="info-modal" tabindex="-1" role="dialog" aria-labelledby="info-titile">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="info-titile">信息框</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="info-content">用户名或密码错误<p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
